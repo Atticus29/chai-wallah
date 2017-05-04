@@ -31,4 +31,4 @@
     </tr>
   </tbody>
 </table>
-<app-edit-jug *ngIf="jugToEdit" [currentJug]="jugToEdit" (clickSender)="doneUpdating($event)"></app-edit-jug>
+<app-edit-jug *ngIf="jugToEdit" [jugToEdit]="jugToEdit" (clickSender)="doneUpdating($event)"></app-edit-jug>

@@ -1,0 +1,20 @@
+td.bg-success{
+  color: #00FF00;
+}
+td.bg-warning{
+  color: #FF00FF;
+}
+td.bg-danger{
+  color: #FFFF00;
+}
+
+
+td.enough{
+  color: #00FF00;
+}
+td.low{
+  color: #FF00FF;
+}
+td.dangerouslyLow{
+  color: red;
+}

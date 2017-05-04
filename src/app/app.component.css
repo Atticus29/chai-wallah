@@ -1,28 +1,7 @@
 body{
-  bgcolor: black;
+  background-color: black;
   /*background-image: url('../assets/img/chai_bg.jpeg');*/
   /*background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;*/
-}
-
-td.bg-success{
-  color: #00FF00;
-}
-td.bg-warning{
-  color: #FF00FF;
-}
-td.bg-danger{
-  color: #FFFF00;
-}
-
-
-td.enough{
-  color: #00FF00;
-}
-td.low{
-  color: #FF00FF;
-}
-td.dangerouslyLow{
-  color: red;
 }

@@ -7,7 +7,7 @@ import { Jug } from '../jug.model'
   styleUrls: ['./edit-jug.component.css']
 })
 export class EditJugComponent {
-  @Input() currentJug: Jug;
+  @Input() jugToEdit: Jug;
   @Output() clickSender = new EventEmitter();
   constructor() { }
 
