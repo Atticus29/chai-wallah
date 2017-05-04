@@ -1,5 +1,5 @@
-import { Component, Input, Outpu, EventEmitter } from '@angular/core';
-
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Jug } from '../jug.model'
 
 @Component({
   selector: 'app-edit-jug',
@@ -7,8 +7,11 @@ import { Component, Input, Outpu, EventEmitter } from '@angular/core';
   styleUrls: ['./edit-jug.component.css']
 })
 export class EditJugComponent {
-
+  @Input() currentJug: Jug;
+  @Output() clickSender = new EventEmitter();
   constructor() { }
 
-
+  updateClicked(currentJug: Jug){
+    this.clickSender.emit(currentJug);
+  }
 }

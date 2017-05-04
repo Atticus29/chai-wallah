@@ -1,5 +1,5 @@
 
-<app-jug-table></app-jug-table>
+<app-jug-table [childJugList]="masterJugList"></app-jug-table>
 
 <div id="create-new-button" *ngIf="makeNewJug">
   <button class="ink-button" (click)="createJug()"><span class="fa fa-plus"></span> Add Jug</button>

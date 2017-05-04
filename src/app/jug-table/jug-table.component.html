@@ -11,7 +11,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let currentJug of jugs">
+    <tr *ngFor="let currentJug of childJugList">
       <td>{{currentJug.name}}</td>
       <td >{{currentJug.dateAdded.toDateString()}}</td>
       <td>{{currentJug.brand}}</td>
@@ -31,3 +31,4 @@
     </tr>
   </tbody>
 </table>
+<app-edit-jug *ngIf="jugToEdit" [currentJug]="jugToEdit" (clickSender)="doneUpdating($event)"></app-edit-jug>

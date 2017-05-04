@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Jug } from '../jug.model';
 
 @Component({
   selector: 'app-jug-table',
@@ -6,16 +7,34 @@ import { Component } from '@angular/core';
   styleUrls: ['./jug-table.component.css']
 })
 export class JugTableComponent {
+  @Input() childJugList: Jug[];
+  jugToEdit = null;
+  makeNewJug: boolean = true;
+  displayNewJugForm: boolean = false;
+
   constructor() { }
 
-  jugs: Jug[] = [
-    new Jug("Redbush", "Dragonfly", 3.50, "Rooibos"),
-    new Jug("Green Lady", "Dragonfly", 3.50, "Green Tea"),
-    new Jug("Matélatte", "Dragonfly", 3.50, "Maté"),
-    new Jug("Sweet Cheek", "Dragonfly", 3.50, "Sweet"),
-    new Jug("Aztec", "Dragonfly", 3.50, "Spicy"),
-    new Jug("Hansel and Gretl", "Dragonfly", 4.00, "Gingerbread")
-  ];
+  createJug(){
+    this.makeNewJug = false;
+    this.displayNewJugForm = true;
+  }
+
+  finishAddForm(){
+    this.makeNewJug = true;
+    this.displayNewJugForm = false;
+  }
+
+  editJug(currentJug){
+    this.jugToEdit = currentJug;
+    this.makeNewJug = false;
+    console.log(this.jugToEdit);
+  }
+
+  doneUpdating(currentJug){
+    this.jugToEdit = null;
+    this.makeNewJug = true;
+  }
+
 
   priceColor(currentJug){
     if(currentJug.price<4){
