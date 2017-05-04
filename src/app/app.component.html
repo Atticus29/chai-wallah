@@ -25,8 +25,10 @@
         <div class="button-group">
         <button class="ink-button" (click)="editJug(currentJug)"><span class="fa fa-edit"></span></button>
         <button class="ink-button" (click)="removeJug(currentJug)"><span class="fa fa-remove"></span></button>
-        <button class="ink-button" (click)="currentJug.removeCup()"><span class="fa fa-coffee"></span></button>
-        <button class="ink-button" (click)="currentJug.removeLarge()"><span class="fa fa-beer"></span></button>
+        <button class="ink-button" (click)="currentJug.pour(8)"><span class="fa fa-coffee"></span></button>
+        <button class="ink-button" (click)="currentJug.pour(12)"><span class="fa fa-coffee fa-2x"></span></button>
+        <button class="ink-button" (click)="currentJug.pour(16)"><span class="fa fa-coffee fa-3x"></span></button>
+        <!-- <button class="ink-button" (click)="currentJug.sale(1)"><span class="fa fa-dollar"></span></button> -->
     </div>
       </td>
     </tr>
@@ -55,4 +57,25 @@
 </div>
 <div id="create-new-button" *ngIf="makeNewJug">
   <button class="ink-button" (click)="createJug()"><span class="fa fa-plus"></span> Add Jug</button>
+</div>
+
+<div class="brand-new-jug" *ngIf="displayNewJugForm">
+  <form class="ink-form">
+    <!--  -->
+      <div class="control-group">
+          <label for="name">Name</label>
+          <div class="control">
+              <input name="name">
+          </div>
+          <label for="brand">Brand</label>
+          <div class="control">
+              <input name="brand">
+          </div>
+          <label for="price">Price</label>
+          <div class="control">
+              <input name="price">
+          </div>
+      </div>
+      <button class="ink-button" (click)="finishAddForm()"><span class="fa fa-check"></span></button>
+  </form>
 </div>

@@ -10,6 +10,7 @@ export class AppComponent {
   title = 'Welcome!';
   jugToEdit = null;
   makeNewJug: boolean = true;
+  displayNewJugForm: boolean = false;
   jugs: Jug[] = [
     new Jug("Redbush", "Dragonfly", 3.50, "Rooibos"),
     new Jug("Green Lady", "Dragonfly", 3.50, "Green Tea"),
@@ -18,6 +19,16 @@ export class AppComponent {
     new Jug("Aztec", "Dragonfly", 3.50, "Spicy"),
     new Jug("Hansel and Gretl", "Dragonfly", 4.00, "Gingerbread")
   ];
+
+  createJug(){
+    this.makeNewJug = false;
+    this.displayNewJugForm = true;
+  }
+
+  finishAddForm(){
+    this.makeNewJug = true;
+    this.displayNewJugForm = false;
+  }
 
   priceColor(currentJug){
     if(currentJug.price<4){
@@ -53,7 +64,6 @@ export class AppComponent {
 }
 
 export class Jug {
-  public MINVOL: number = 0;
   public dateAdded: Date = new Date();
   public volume: number = 64;
   constructor(public name: string, public brand: string, public price: number, public flavor: string) { }
@@ -66,11 +76,11 @@ export class Jug {
     }
   }
 
-  removeLarge(){
-    if(this.volume >= 16){
-      this.volume -= 16;
+  pour(number){
+    if(this.volume >= number){
+      this.volume -= number;
     } else{
-      alert("Can't pour a mug that doesn't exist!");
+      alert("Not enough chai remains");
     }
   }
 }
