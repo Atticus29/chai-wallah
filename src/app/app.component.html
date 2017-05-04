@@ -1,3 +1,23 @@
 <h1>
   {{title}}
 </h1>
+<table class="ink-table">
+  <thead>
+    <tr>
+      <th>Chai</th>
+      <th>Tapped on</th>
+      <th>Brand</th>
+      <th>Price</th>
+      <th>Flavor description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let currentJug of jugs">
+      <td>{{currentJug.name}}</td>
+      <td>{{currentJug.dateAdded}}</td>
+      <td>{{currentJug.brand}}</td>
+      <td>${{currentJug.price}}</td>
+      <td>{{currentJug.flavor}}</td>
+    </tr>
+  </tbody>
+</table>
