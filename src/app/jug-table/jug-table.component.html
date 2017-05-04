@@ -1,0 +1,33 @@
+<table class="ink-table">
+  <thead>
+    <tr>
+      <th>Chai</th>
+      <th>Tapped on</th>
+      <th>Brand</th>
+      <th>Price</th>
+      <th>Flavor description</th>
+      <th>Cups Remaining</th>
+      <th>Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let currentJug of jugs">
+      <td>{{currentJug.name}}</td>
+      <td >{{currentJug.dateAdded.toDateString()}}</td>
+      <td>{{currentJug.brand}}</td>
+      <td [class]="priceColor(currentJug)">${{currentJug.price}}</td>
+      <td>{{currentJug.flavor}}</td>
+      <td [class]=assessScarcity(currentJug)>{{currentJug.volume/8}}</td>
+      <td>
+        <div class="button-group">
+          <button class="ink-button" (click)="editJug(currentJug)"><span class="fa fa-edit"></span></button>
+          <button class="ink-button" (click)="removeJug(currentJug)"><span class="fa fa-remove"></span></button>
+          <button class="ink-button" (click)="currentJug.pour(8)"><span class="fa fa-coffee"></span></button>
+          <button class="ink-button" (click)="currentJug.pour(12)"><span class="fa fa-coffee fa-2x"></span></button>
+          <button class="ink-button" (click)="currentJug.pour(16)"><span class="fa fa-coffee fa-3x"></span></button>
+          <!-- <button class="ink-button" (click)="currentJug.sale(1)"><span class="fa fa-dollar"></span></button> -->
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

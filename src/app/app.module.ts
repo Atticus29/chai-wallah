@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { JugComponent } from './jug/jug.component';
 import { AddJugComponent } from './add-jug/add-jug.component';
 import { EditJugComponent } from './edit-jug/edit-jug.component';
+import { JugTableComponent } from './jug-table/jug-table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     JugComponent,
     AddJugComponent,
-    EditJugComponent
+    EditJugComponent,
+    JugTableComponent
   ],
   imports: [
     BrowserModule,

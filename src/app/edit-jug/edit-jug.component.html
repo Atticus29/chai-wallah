@@ -1,3 +1,21 @@
-<p>
-  edit-jug works!
-</p>
+<div id="form-reveal" *ngIf="jugToEdit">
+  <hr>
+  <form class="ink-form">
+    <!--  -->
+      <div class="control-group">
+          <label for="name">Name</label>
+          <div class="control">
+              <input [(ngModel)]="jugToEdit.name" name="name">
+          </div>
+          <label for="brand">Brand</label>
+          <div class="control">
+              <input [(ngModel)]="jugToEdit.brand" name="brand">
+          </div>
+          <label for="price">Price</label>
+          <div class="control">
+              <input [(ngModel)]="jugToEdit.price" name="price">
+          </div>
+      </div>
+      <button class="ink-button" (click)="doneUpdating()"><span class="fa fa-check"></span></button>
+  </form>
+</div>
